@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script src="Scripts/jquery-3.3.1.js"></script>
+    <script src="Scripts/knockout-3.4.2.js"></script>
+
+    <title></title>
+</head>
+<body>
+    <p>First Name: <input type="text" data-bind="value: firstName"/></p>
+    <p>Last Name: <input type="text" data-bind="value:lastName"/></p>
+    <p>Email Address: <input type="text" data-bind="value:emailAddress"/></p>
+    <br/>
+    <br/>
+    <p>Hello, <strong data-bind="text: firstName"></strong> <strong data-bind="text:lastName"></strong>. 
+    All emails will be sent to <strong data-bind="text:emailAddress"></strong>. Please update in the fields above if any information is incorrect.</p>
+
+
+    <script>
+        function UserViewModel() {
+            this.firstName = ko.observable("Trisha");
+            this.lastName = ko.observable("Saldanha");
+            this.emailAddress = ko.observable("trisha.saldanha88@gmail.com");
+        }
+
+        ko.applyBindings(new UserViewModel());
+    </script>
+</body>
+</html>
